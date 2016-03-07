@@ -99,3 +99,68 @@ states.rds<-function(states,...){
     names(state.data)<-states
     return(state.data)    
 }
+
+
+
+#####################################
+#		  Select Counties			 #
+#####################################
+
+
+county.rds<-function(counties,...){
+
+	if(!is.list(counties)){
+		stop("Argument states is not in list format.")
+
+length(counties)
+vector("list",length)
+#WArds<-Wards[Wards@data$CTFIPS=="33",]
+
+
+#Wards[Wards@data$CTFIPS=="33",]
+#WArds2<-fortify(WArds)
+
+
+if(!is.list(counties)){
+		stop("Argument counties is not in list format.")
+
+    if(!isTRUE(
+        all(
+         suppressWarnings(
+           unlist(lapply(counties,function (X){ !is.na(as.numeric(noquote(X)))} ))
+            ))
+            )) 
+    stop("Please use numbers to identify your counties.
+            Consider using the ... function.")
+
+        
+    county.data<-vector("list",length(counties))
+    
+    if(fortify=="TRUE"){
+        if(!require("maptools",character.only = TRUE)){
+            {install.packages("maptools",dep=TRUE)
+             if(!require(x,character.only = TRUE)) 
+                stop("Please install maptools.")
+            }
+        }
+        county.data<-lapply(counties,function(x){
+            tmp.d<-roads[roads@data$CTFIPS=="x",]
+            f.tmp.d<-fortify(tmp.d)
+            return(f.tmp.d)
+            }
+        )
+    }
+        
+    if(fortify=="FALSE"){
+        county.data<-lapply(counties,function(x){
+            roads[roads@data$CTFIPS=="x",]
+            }
+        )
+    }
+
+
+    if(tmp.d%in%ls){rm(tmp.d)}
+    if(f.tmp.d%in%ls){rm(f.tmp.d)}
+    names(county.data)<-counties
+    return(county.data)    
+}
