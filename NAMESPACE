@@ -1,1 +1,3 @@
+export(load.data)
 
+importFrom("maptools", "fortify")
