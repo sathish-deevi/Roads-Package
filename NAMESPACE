@@ -1,5 +1,6 @@
 export(Load.data)
 export(Read.data)
 export(state.rds)
+export(county.rds)
 
 importFrom("maptools", "fortify")
