@@ -1,9 +1,8 @@
-\name{modes-package}
-\alias{modes-package}
-\alias{modes}
+\name{roads-package}
+\alias{roads-package}
+\alias{roads}
 \docType{package}
-\title{modes: An R package to find the modes & assess the modality 
-	of complex or mixed distributions
+\title{roads: An set of helper functions to take advantage of US Roadways data--including the shapes for major roads.
 }
 
 \description{ The R package modes was designed with a dual purpose of
@@ -20,7 +19,7 @@
     mode or modes for various data types, it also provides a programmatic
     way of understanding the modality (i.e. unimodal, bimodal, etc.) of
     a dataset (whether it's big data or not). See 
-    <http://www.sdeevi.com/modes_package> for examples and discussion.
+    <http://www.sdeevi.com/roads_package> or <http://sathish-deevi.github.io/Roads-Package> for examples and discussion.
 }
 
 \details{
@@ -102,18 +101,8 @@ Parametric
 
 
 \references{
-Ashman, K., Bird, C., & Zepf, S. (1994). 
- Detecting bimodality in astronomical datasets. 
-The Astronomical Journal, 2348-2361.
 
-Ellison, A. (1987). Effect of Seed Dimorphism on the
-Density-Dependent Dynamics of Experimental 
-Populations of Atriplex triangularis (Chenopodiaceae).
- American Journal of Botany, 74(8), 1280-1288.
 
-Zhang, C., Mapes, B., & Soden, B. (2003). 
-Bimodality in tropical water vapour. Quarterly Journal 
-of the Royal Meteorological Society, 129(594), 2847-2866.
 }
 
 \keyword{ 
