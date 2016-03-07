@@ -1,3 +1,4 @@
 export(Load.data)
+export(Read.data)
 
 importFrom("maptools", "fortify")
