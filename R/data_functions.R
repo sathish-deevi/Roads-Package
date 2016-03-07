@@ -47,3 +47,55 @@ Read.data<-function(...){
 	return(roads)
 }
 
+
+#####################################
+#		  Select States			 #
+#####################################
+
+<-function(states,...){
+    
+	if(!is.list(states)){
+		stop("Argument states is not in list format.")
+
+
+    if(!isTRUE(
+        all(
+         suppressWarnings(
+           unlist(lapply(states,function (X){ !is.na(as.numeric(noquote(X)))} ))
+            ))
+            )) 
+    stop("Please use numbers to identify your states.
+            Consider using the ... function.")
+
+
+
+    state.data<-vector("list",length(states))
+    
+    if(fortify=="TRUE"){
+        if(!require("maptools",character.only = TRUE)){
+            {install.packages("maptools",dep=TRUE)
+             if(!require(x,character.only = TRUE)) 
+                stop("Please install maptools.")
+            }
+        }
+        state.data<-lapply(states,function(x){
+            tmp.d<-roads[roads@data$STFIPS=="x",]
+            f.tmp.d<-fortify(tmp.d)
+            return(f.tmp.d)
+            }
+        )
+    }
+        
+    if(fortify=="FALSE"){
+        state.data<-lapply(states,function(x){
+            roads[roads@data$STFIPS=="x",]
+            }
+        )
+    }
+
+
+    if(tmp.d%in%ls){rm(tmp.d)}
+    if(f.tmp.d%in%ls){rm(f.tmp.d)}
+    names(state.data)<-states
+    return(state.data)    
+}
