@@ -32,3 +32,18 @@ Load.data<-function(...){
 
 	return(roads)
 }
+
+
+#####################################
+#		Read in Data		#
+#####################################
+
+Read.data<-function(...){
+	roads=readShapeLines("NHPNLine.shp",
+		delete_null_obj=TRUE)
+
+	if(!dim(rds)==NULL){
+		print("Data loaded successfully.")
+	return(roads)
+}
+
