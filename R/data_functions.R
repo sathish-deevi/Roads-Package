@@ -52,7 +52,7 @@ Read.data<-function(...){
 #		  Select States			 #
 #####################################
 
-<-function(states,...){
+states.rds<-function(states,...){
     
 	if(!is.list(states)){
 		stop("Argument states is not in list format.")
